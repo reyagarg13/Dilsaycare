@@ -7,7 +7,7 @@ Node.js + TypeScript backend for the scheduler system with recurring weekly slot
 - 🔄 **Recurring Schedules**: Create weekly recurring time slots
 - 📅 **Exception Handling**: Modify or delete specific dates without affecting the pattern
 - 🔒 **Validation**: Comprehensive input validation with Joi
-- 🗄️ **PostgreSQL**: Robust database with Knex.js migrations
+- 🗄️ **PostgreSQL**: Robust database with automatic schema setup
 - 🛡️ **Security**: Helmet, CORS, and proper error handling
 - 📝 **TypeScript**: Full type safety and modern development
 
@@ -61,11 +61,9 @@ Node.js + TypeScript backend for the scheduler system with recurring weekly slot
    # Create database
    createdb scheduler_db
    
-   # Run migrations
-   npm run migrate
+   # Database tables are created automatically on server start
    
-   # Seed sample data (optional)
-   npm run seed
+   # Sample data is seeded automatically on server start
    ```
 
 4. **Start development server**
@@ -148,9 +146,7 @@ Response:
 - `npm run dev` - Start development server with hot reload
 - `npm run build` - Build for production
 - `npm start` - Start production server
-- `npm run migrate` - Run database migrations
-- `npm run migrate:rollback` - Rollback last migration
-- `npm run seed` - Run database seeds
+- Database tables are created automatically on server startup
 
 ### Testing
 - Test API endpoints using Postman or similar tools
@@ -162,7 +158,7 @@ Response:
 ### Environment Variables for Production
 ```env
 NODE_ENV=production
-DATABASE_URL=postgresql://user:pass@host:5432/db?ssl=true
+DATABASE_URL=postgresql://user:pass@host:5432/db
 FRONTEND_URL=https://your-frontend-domain.com
 ```
 

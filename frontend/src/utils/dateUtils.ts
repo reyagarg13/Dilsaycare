@@ -184,3 +184,6 @@ export const formatDate = (date: Date | string, formatString: string = 'yyyy-MM-
   const dateObj = typeof date === 'string' ? parseISO(date) : date;
   return format(dateObj, formatString);
 };
+
+// Export addDays from date-fns for direct use
+export { addDays };
