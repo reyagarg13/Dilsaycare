@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-gray-950/20;
+  }
+  
+  body {
+    @apply bg-gray-50 text-gray-900 font-sans;
+    margin: 0;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold text-gray-900;
+    line-height: 1.2;
+  }
+  
+  /* Mobile-first responsive design */
+  html {
+    font-size: 16px;
+  }
+  
+  @media (max-width: 640px) {
+    html {
+      font-size: 14px;
+    }
+  }
+}
+
+@layer components {
+  .mobile-container {
+    @apply max-w-sm mx-auto bg-white min-h-screen;
+  }
+  
+  .calendar-day {
+    @apply h-10 w-10 rounded-lg text-sm font-medium transition-colors flex items-center justify-center;
+  }
+  
+  .schedule-item {
+    @apply bg-white rounded-lg shadow-sm border border-gray-950/20 overflow-hidden;
+  }
+  
+  .time-slot {
+    @apply p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 transition-colors;
+  }
+}
+
+@layer utilities {
+  .safe-top {
+    padding-top: env(safe-area-inset-top);
+  }
+  
+  .safe-bottom {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+}
